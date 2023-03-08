@@ -1321,7 +1321,7 @@ Future<List<DateTime>?> showDatePicker({
     );
   }
 
-  return await showDialog<List<DateTime>>(
+  return await showDialog<List<DateTime>?>(
     context: context,
     builder: (BuildContext context) => child,
   );
