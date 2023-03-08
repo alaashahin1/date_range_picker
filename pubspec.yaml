@@ -1,0 +1,17 @@
+name: date_range_picker
+description: Date Range Pickers use a dialog window to select a range of date on mobile.
+version: 2.0.0
+author: anicdh <anic.dh@gmail.com>
+homepage: https://github.com/anicdh/date_range_picker
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+  flutter: ">=3.7.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
