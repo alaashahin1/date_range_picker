@@ -80,7 +80,7 @@ class _DatePickerHeader extends StatelessWidget {
     final TextTheme headerTextTheme = themeData.primaryTextTheme;
     Color? dayColor;
     Color? yearColor;
-    switch (themeData.primaryColorBrightness) {
+    switch (themeData.brightness) {
       case Brightness.light:
         dayColor = mode == DatePickerMode.day ? Colors.black87 : Colors.black54;
         yearColor =
@@ -102,7 +102,7 @@ class _DatePickerHeader extends StatelessWidget {
         backgroundColor = themeData.primaryColor;
         break;
       case Brightness.dark:
-        backgroundColor = themeData.colorScheme.background;
+        backgroundColor = themeData.colorScheme.secondary;
         break;
     }
 
@@ -466,12 +466,16 @@ class DayPicker extends StatelessWidget {
             : null;
         if (isSelectedFirstDay &&
             (isSelectedLastDay == null || isSelectedLastDay)) {
-          itemStyle = themeData.textTheme.bodyMedium;
+          itemStyle = themeData.textTheme.bodyMedium!.copyWith(
+            color: themeData.colorScheme.onSecondary,
+          );
           decoration = new BoxDecoration(
               color: themeData.colorScheme.secondary, shape: BoxShape.circle);
         } else if (isSelectedFirstDay) {
           // The selected day gets a circle background highlight, and a contrasting text color.
-          itemStyle = themeData.textTheme.bodyMedium;
+          itemStyle = themeData.textTheme.bodyMedium!.copyWith(
+            color: themeData.colorScheme.onSecondary,
+          );
           decoration = new BoxDecoration(
               color: themeData.colorScheme.secondary,
               borderRadius: BorderRadius.only(
@@ -479,7 +483,9 @@ class DayPicker extends StatelessWidget {
                 bottomLeft: new Radius.circular(50.0),
               ));
         } else if (isSelectedLastDay != null && isSelectedLastDay) {
-          itemStyle = themeData.textTheme.bodyMedium;
+          itemStyle = themeData.textTheme.bodyMedium!.copyWith(
+            color: themeData.colorScheme.onSecondary,
+          );
           decoration = new BoxDecoration(
               color: themeData.colorScheme.secondary,
               borderRadius: BorderRadius.only(
